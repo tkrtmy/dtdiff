@@ -28,6 +28,9 @@ $ dtdiff -m '12:40:50' '15:48:20'
 187 minutes
 $ dtdiff -m -q '12:40:50' '15:48:20'
 187
+
+$ dtdiff -m 11:47 18:23
+396 minutes
 ```
 
 ## CLI Installation
