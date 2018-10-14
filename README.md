@@ -30,8 +30,8 @@ $ dtdiff -m -q '12:40:50' '15:48:20'
 187
 ```
 
-## Installation
+## CLI Installation
 
 ```
-
+go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
 ```
