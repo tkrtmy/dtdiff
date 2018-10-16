@@ -16,6 +16,7 @@ var (
 	sec     bool
 	nanosec bool
 	quiet   bool
+	until   bool
 )
 
 func init() {
@@ -29,6 +30,7 @@ func init() {
 	flag.BoolVar(&sec, "s", false, "display seconds only")
 	flag.BoolVar(&nanosec, "n", false, "display nanoseconds only")
 	flag.BoolVar(&quiet, "q", false, "display without time unit")
+	flag.BoolVar(&until, "until", false, "calculate until a given one")
 	flag.Parse()
 }
 
@@ -47,8 +49,14 @@ func run() error {
 	}
 	var dura time.Duration
 	if len(ts) == 1 {
-		// give one augument, calculate diff between ts[0] and now (form ts[0] to now)
-		dura = dtdiff.CalculateDiffSince(ts[0])
+		// give one augument, calculate diff between ts[0] and now.
+		if until {
+			// form now to ts[0]
+			dura = dtdiff.CalculateDiffUntil(ts[0])
+		} else {
+			// form ts[0] to now
+			dura = dtdiff.CalculateDiffSince(ts[0])
+		}
 	} else {
 		dura = dtdiff.CalculateDiff(ts[0], ts[1])
 	}
