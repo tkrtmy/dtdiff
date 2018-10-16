@@ -33,6 +33,8 @@ func NewParser(now time.Time) Parser {
 	return &parser{now}
 }
 
+// Parse parse datetime string to convert time.Time
+// Only in hh:mm:ss, hh:mm fill today's date(year, month, day)
 func (p *parser) Parse(str string) (time.Time, error) {
 	t, err := dateparse.ParseLocal(str)
 	if t.IsZero() {
