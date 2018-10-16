@@ -1,4 +1,8 @@
-# WIP
+[![GoDoc](https://godoc.org/github.com/tkrtmy/dtdiff?status.svg)](https://godoc.org/github.com/tkrtmy/dtdiff)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)][license]
+
+[license]: https://github.com/tkrtmy/dtdiff/blob/master/LICENCE
+
 # dtdiff
 **dtdiff** is **D**ate**T**ime**Diff**
 
