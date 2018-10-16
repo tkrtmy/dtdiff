@@ -1,0 +1,2 @@
+# version of dtdiff cli
+Version = "v0.0.1"
