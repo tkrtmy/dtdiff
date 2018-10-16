@@ -4,9 +4,9 @@
 
 ## CLI Usage
 
-```.sh
+```shell
 $ dtdiff -help
-Usage: dtdiff [options...] [datetime(from)] [datetime(to)]
+Usage: dtdiff [options] [datetime(from)] [datetime(to)]
 
   -h    display hours only
   -m    display minutes only
@@ -15,6 +15,8 @@ Usage: dtdiff [options...] [datetime(from)] [datetime(to)]
   -s    display seconds only
   -short
         short description
+  -until
+        calculate until a given one
 
 $ dtdiff '2018-10-14 12:40:50' '2018-10-16 15:48:20'
 2 days 3 hours 7 minutes 30 seconds
@@ -22,6 +24,11 @@ $ dtdiff '2018-10-14 12:40:50' '2018-10-16 15:48:20'
 # When you give one argument, calculate between a given and now.
 # If you execute command at 2018-10-16 15:48:20
 $ dtdiff '2018-10-14 12:40:50'
+2 days 3 hours 7 minutes 30 seconds
+
+# When you give one argument with -u option, calculate between now and a given.
+# If you execute command at 2018-10-14 12:40:50
+$ dtdiff -until '2018-10-16 15:48:20'
 2 days 3 hours 7 minutes 30 seconds
 
 $ dtdiff -m '12:40:50' '15:48:20'
@@ -35,6 +42,6 @@ $ dtdiff -m 11:47 18:23
 
 ## CLI Installation
 
-```
-go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
+```shell
+$ go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
 ```
