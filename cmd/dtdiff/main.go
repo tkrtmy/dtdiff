@@ -17,6 +17,7 @@ var (
 	nanosec bool
 	quiet   bool
 	until   bool
+	version bool
 )
 
 func init() {
@@ -31,10 +32,15 @@ func init() {
 	flag.BoolVar(&nanosec, "n", false, "display nanoseconds only")
 	flag.BoolVar(&quiet, "q", false, "display without time unit")
 	flag.BoolVar(&until, "until", false, "calculate until a given one")
+	flag.BoolVar(&version, "v", false, "display current version")
 	flag.Parse()
 }
 
 func run() error {
+	if version {
+		fmt.Fprintf(os.Stdout, "%s\n", Version)
+		return nil
+	}
 	if len(flag.Args()) < 1 {
 		return fmt.Errorf("You must give arguments at least one")
 	}
@@ -77,7 +83,7 @@ func run() error {
 		msg = long(dura)
 	}
 
-	fmt.Print(msg)
+	fmt.Fprintf(os.Stdout, msg)
 	return nil
 }
 

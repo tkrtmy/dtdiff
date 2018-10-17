@@ -23,6 +23,7 @@ Usage: dtdiff [options] [datetime(from)] [datetime(to)]
         short description
   -until
         calculate until a given one
+  -v    display current version
 
 $ dtdiff '2018-10-14 12:40:50' '2018-10-16 15:48:20'
 2 days 3 hours 7 minutes 30 seconds
@@ -48,6 +49,14 @@ $ dtdiff -m 11:47 18:23
 
 ## CLI Installation
 
+### For Homebrew user
+
+```shell
+$ brew tap tkrtmy/dtdiff
+$ brew install dtdiff
+```
+
+### For Go user
 ```shell
 $ go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
 ```
