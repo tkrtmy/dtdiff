@@ -67,20 +67,21 @@ func run() error {
 		dura = dtdiff.CalculateDiff(ts[0], ts[1])
 	}
 
+	f := dtdiff.NewFormatter(!quiet, dura)
 	var msg string
 	switch {
 	case sht:
-		msg = short(dura)
+		msg = f.Short()
 	case hour:
-		msg = hours(dura)
+		msg = f.Hours()
 	case min:
-		msg = minutes(dura)
+		msg = f.Minutes()
 	case sec:
-		msg = seconds(dura)
+		msg = f.Seconds()
 	case nanosec:
-		msg = nanoseconds(dura)
+		msg = f.Nanoseconds()
 	default:
-		msg = long(dura)
+		msg = f.Long()
 	}
 
 	fmt.Fprintf(os.Stdout, msg)
@@ -92,63 +93,4 @@ func main() {
 		fmt.Fprintf(os.Stderr, "%s\n", err)
 		os.Exit(1)
 	}
-}
-
-func resolve(duration time.Duration) (days, hours, mins, secs int) {
-	whole := int(duration.Hours())
-	days = whole / 24
-	hours = whole % 24
-	mins = int(duration.Minutes()) % 60
-	secs = int(duration.Seconds()) % 60
-	return
-}
-
-func long(duration time.Duration) string {
-	days, hours, mins, secs := resolve(duration)
-	return fmt.Sprintf("%d days %d hours %d minutes %d seconds\n", days, hours, mins, secs)
-}
-
-func short(duration time.Duration) string {
-	days, hours, mins, secs := resolve(duration)
-	return fmt.Sprintf("%dd%dh%dm%ds\n", days, hours, mins, secs)
-}
-
-func hours(duration time.Duration) string {
-	var format string
-	if quiet {
-		format = "%.2f\n"
-	} else {
-		format = "%.2f hours\n"
-	}
-	return fmt.Sprintf(format, duration.Hours())
-}
-
-func minutes(duration time.Duration) string {
-	var format string
-	if quiet {
-		format = "%d\n"
-	} else {
-		format = "%d minutes\n"
-	}
-	return fmt.Sprintf(format, int(duration.Minutes()))
-}
-
-func seconds(duration time.Duration) string {
-	var format string
-	if quiet {
-		format = "%d\n"
-	} else {
-		format = "%d seconds\n"
-	}
-	return fmt.Sprintf(format, int(duration.Seconds()))
-}
-
-func nanoseconds(duration time.Duration) string {
-	var format string
-	if quiet {
-		format = "%d\n"
-	} else {
-		format = "%d nanoseconds\n"
-	}
-	return fmt.Sprintf(format, duration.Nanoseconds())
 }
