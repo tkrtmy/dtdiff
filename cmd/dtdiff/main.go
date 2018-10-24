@@ -67,7 +67,7 @@ func run() error {
 		dura = dtdiff.CalculateDiff(ts[0], ts[1])
 	}
 
-	f := dtdiff.NewFormatter(!quiet, dura)
+	f := dtdiff.NewFormatter(quiet, dura)
 	var msg string
 	switch {
 	case sht:

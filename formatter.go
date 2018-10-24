@@ -7,15 +7,15 @@ import (
 
 // Formatter is time diff put into words
 type Formatter struct {
-	// with time unit?
-	withUnit bool
+	// without time unit?
+	withoutUnit bool
 	// time diff duration
 	duration time.Duration
 }
 
 // NewFormatter returns new Formatter
-func NewFormatter(withUnit bool, duration time.Duration) *Formatter {
-	return &Formatter{withUnit, duration}
+func NewFormatter(withoutUnit bool, duration time.Duration) *Formatter {
+	return &Formatter{withoutUnit, duration}
 }
 
 func resolve(duration time.Duration) (days, hours, mins, secs int) {
@@ -42,10 +42,10 @@ func (f *Formatter) Short() string {
 // Hours display hour, the second decimal. ex. 4.83 hours
 func (f *Formatter) Hours() string {
 	var format string
-	if f.withUnit {
-		format = "%.2f hours\n"
-	} else {
+	if f.withoutUnit {
 		format = "%.2f\n"
+	} else {
+		format = "%.2f hours\n"
 	}
 	return fmt.Sprintf(format, f.duration.Hours())
 }
@@ -53,10 +53,10 @@ func (f *Formatter) Hours() string {
 // Minutes display minutes. ex. 123 minutes
 func (f *Formatter) Minutes() string {
 	var format string
-	if f.withUnit {
-		format = "%d minutes\n"
-	} else {
+	if f.withoutUnit {
 		format = "%d\n"
+	} else {
+		format = "%d minutes\n"
 	}
 	return fmt.Sprintf(format, int(f.duration.Minutes()))
 }
@@ -64,10 +64,10 @@ func (f *Formatter) Minutes() string {
 // Seconds display seconds. ex. 65555 seconds
 func (f *Formatter) Seconds() string {
 	var format string
-	if f.withUnit {
-		format = "%d seconds\n"
-	} else {
+	if f.withoutUnit {
 		format = "%d\n"
+	} else {
+		format = "%d seconds\n"
 	}
 	return fmt.Sprintf(format, int(f.duration.Seconds()))
 }
@@ -75,10 +75,10 @@ func (f *Formatter) Seconds() string {
 // Nanoseconds display. ex 810821916 nanoseconds
 func (f *Formatter) Nanoseconds() string {
 	var format string
-	if f.withUnit {
-		format = "%d nanoseconds\n"
-	} else {
+	if f.withoutUnit {
 		format = "%d\n"
+	} else {
+		format = "%d nanoseconds\n"
 	}
 	return fmt.Sprintf(format, f.duration.Nanoseconds())
 }

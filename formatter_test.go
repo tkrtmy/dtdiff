@@ -7,8 +7,8 @@ import (
 
 var (
 	dura, _ = time.ParseDuration("35h34m12s231ns")
-	f       = NewFormatter(false, dura)
-	fwu     = NewFormatter(true, dura)
+	f       = NewFormatter(true, dura)
+	fwu     = NewFormatter(false, dura)
 )
 
 func TestFormatLong(t *testing.T) {
