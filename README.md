@@ -60,3 +60,13 @@ $ brew install dtdiff
 ```shell
 $ go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
 ```
+
+### How to build & run
+
+```shell
+# build in container
+$ docker build -t dtdiff ./cmd/dtdiff
+# run in container
+$ docker run -it --rm dtdiff 12:48 21:23
+0 days 8 hours 35 minutes 0 seconds
+```
