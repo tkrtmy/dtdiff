@@ -67,6 +67,7 @@ $ go get -u github.com/tkrtmy/dtdiff/cmd/dtdiff
 $ docker run --rm tkrtmy/dtdiff -m 12:48 21:24
 516 minutes
 ```
+[![dockerhub](http://dockeri.co/image/tkrtmy/dtdiff)](https://hub.docker.com/r/tkrtmy/dtdiff/)
 
 ### How to build & run
 
