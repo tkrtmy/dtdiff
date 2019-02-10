@@ -64,7 +64,7 @@ func run() error {
 			dura = dtdiff.CalculateDiffSince(ts[0])
 		}
 	} else {
-		dura = dtdiff.CalculateDiff(ts[0], ts[1])
+		dura = dtdiff.CalculateDiffs(ts...)
 	}
 
 	f := dtdiff.NewFormatter(quiet, dura)
