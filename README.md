@@ -45,6 +45,12 @@ $ dtdiff -m -q '12:40:50' '15:48:20'
 
 $ dtdiff -m 11:47 18:23
 396 minutes
+
+# When you would like to calculate multiple DateTimes Difference
+# pseudo-instruction:
+# expr `dtdiff '2019-02-03 12:40:50' '2019-02-04 11:48:16'` + `dtdiff '2019-02-07 11:40:52' '2019-02-13 15:32:09'` + ...
+$ dtdiff '2019-02-03 12:40:50' '2019-02-04 11:48:16' '2019-02-07 11:40:52' '2019-02-13 15:32:09'
+7 days 2 hours 58 minutes 43 seconds
 ```
 
 ## CLI Installation

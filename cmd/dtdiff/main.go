@@ -55,7 +55,7 @@ func run() error {
 	}
 	var dura time.Duration
 	if len(ts) == 1 {
-		// give one augument, calculate diff between ts[0] and now.
+		// give one argument, calculate diff between ts[0] and now.
 		if until {
 			// form now to ts[0]
 			dura = dtdiff.CalculateDiffUntil(ts[0])
@@ -64,7 +64,7 @@ func run() error {
 			dura = dtdiff.CalculateDiffSince(ts[0])
 		}
 	} else {
-		dura = dtdiff.CalculateDiff(ts[0], ts[1])
+		dura = dtdiff.CalculateDiffs(ts...)
 	}
 
 	f := dtdiff.NewFormatter(quiet, dura)
