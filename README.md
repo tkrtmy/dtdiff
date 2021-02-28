@@ -1,5 +1,6 @@
 [![Release](https://img.shields.io/github/release/tkrtmy/dtdiff.svg)](https://github.com/tkrtmy/dtdiff/releases)
 [![Build Status](https://travis-ci.org/tkrtmy/dtdiff.svg?branch=master)](https://travis-ci.org/tkrtmy/dtdiff)
+[![CI](https://github.com/tkrtmy/dtdiff/actions/workflows/ci.yml/badge.svg)](https://github.com/tkrtmy/dtdiff/actions/workflows/ci.yml)
 [![GoDoc](https://godoc.org/github.com/tkrtmy/dtdiff?status.svg)](https://godoc.org/github.com/tkrtmy/dtdiff)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)][license]
 
