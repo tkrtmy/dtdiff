@@ -79,7 +79,7 @@ $ docker run --rm tkrtmy/dtdiff -m 12:48 21:24
 
 ```shell
 # build in container
-$ docker build -t dtdiff ./cmd/dtdiff
+$ docker build -t dtdiff .
 # run in container
 $ docker run --rm dtdiff 12:48 21:23
 0 days 8 hours 35 minutes 0 seconds
