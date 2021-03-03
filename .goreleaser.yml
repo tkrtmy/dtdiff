@@ -1,0 +1,19 @@
+project_name: dtdiff
+builds:
+  - main: ./cmd/dtdiff
+    binary: dtdiff
+    goos:
+      - linux
+      - darwin
+      - windows
+    ldflags:
+      - -s -w
+    env:
+      - CGO_ENABLED=0
+archives:
+  - name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+release:
+  prerelease: auto
