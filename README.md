@@ -1,6 +1,6 @@
 [![Release](https://img.shields.io/github/release/tkrtmy/dtdiff.svg)](https://github.com/tkrtmy/dtdiff/releases)
 [![CI](https://github.com/tkrtmy/dtdiff/actions/workflows/ci.yml/badge.svg)](https://github.com/tkrtmy/dtdiff/actions/workflows/ci.yml)
-[![GoDoc](https://godoc.org/github.com/tkrtmy/dtdiff?status.svg)](https://godoc.org/github.com/tkrtmy/dtdiff)
+[![GoDoc](https://pkg.go.dev/badge/github.com/tkrtmy/dtdiff)](https://pkg.go.dev/github.com/tkrtmy/dtdiff)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)][license]
 
 [license]: https://github.com/tkrtmy/dtdiff/blob/master/LICENCE
