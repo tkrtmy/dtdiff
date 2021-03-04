@@ -1,3 +1,5 @@
 module github.com/tkrtmy/dtdiff
 
-require github.com/araddon/dateparse v0.0.0-20181010035859-f056aa227cd7
+go 1.16
+
+require github.com/araddon/dateparse v0.0.0-20210207001429-0eec95c9db7e
