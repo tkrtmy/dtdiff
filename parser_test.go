@@ -24,12 +24,12 @@ func TestParseSucceed(t *testing.T) {
 	now := time.Date(2018, 10, 14, 12, 12, 12, 12, time.Local)
 	p := NewParser(now)
 	for _, ti := range testInput {
-		time, err := p.Parse(ti.in)
+		parsed, err := p.Parse(ti.in)
 		if err != nil {
 			t.Fatalf("test failed %s\n", err.Error())
 		}
-		if time.Format("2006-01-02 15:04:05") != ti.out {
-			t.Fatalf("expected: %s, actual: %s\n", ti.out, time.Format("2006-01-02 15:04:05"))
+		if parsed.Format("2006-01-02 15:04:05") != ti.out {
+			t.Fatalf("expected: %s, actual: %s\n", ti.out, parsed.Format("2006-01-02 15:04:05"))
 		}
 	}
 }

@@ -37,7 +37,7 @@ func NewParser(now time.Time) Parser {
 // Only in hh:mm:ss, hh:mm fill today's date(year, month, day)
 func (p *parser) Parse(str string) (time.Time, error) {
 	t, err := dateparse.ParseLocal(str)
-	if t.IsZero() {
+	if t.IsZero() || t.Year() == 0 {
 		t, err = p.parseTime(str)
 	}
 	return t, err
